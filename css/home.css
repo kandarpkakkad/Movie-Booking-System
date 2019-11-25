@@ -1,0 +1,35 @@
+#dropdown1.dropdown-content li {
+	background-color: #19334d;
+}
+
+#dd  a{
+	background-color: #19334d;
+	color: #f3f3f3;
+	vertical-align: 50px;
+}
+
+#dd a:hover {
+	background-color: #19334d;
+	color: #f3f3f3;
+}
+
+#dropdown1.dropdown-content li a {
+	text-transform: uppercase;
+	color: #f3f3f3;
+}
+
+#dropdown1.dropdown-content li a:hover {
+	color: #19334d;
+}
+
+/*
+a.nothing {
+	background-color: #19334d;
+	color: #f3f3f3;
+}
+
+a.nothing:hover {
+	background-color: #19334d;
+	color: #f3f3f3;
+}
+ */

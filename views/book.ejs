@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="shortcut icon" href="image/x-icon" href="icon2.ico"/>
+        <link rel="stylesheet" href="../css/tickets.css" type="text/css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"/>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+        <link href="https://fonts.googleapis.com/css?family=Inconsolata:700">
+        <link rel="stylesheet" type="text/css" href="../css/signup.css">
+        <link rel="stylesheet" type="text/css" href="../css/book.css">
+        <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="../swiper/swiper.min.css">
+        <link rel = "stylesheet" href="../css/seatcss.css">
+        <style>
+            .swiper-container {
+                width: 100%;
+                height: 100%;
+            }
+            .swiper-slide {
+                text-align: center;
+                font-size: 18px;
+                background: #f3f3f3;
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: -webkit-flex;
+                display: flex;
+                -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                -webkit-justify-content: center;
+                justify-content: center;
+                -webkit-box-align: center;
+                -ms-flex-align: center;
+                -webkit-align-items: center;
+                align-items: center;
+                height: 30%;
+                width: 50%;
+                max-height: 500px;
+            }
+            .tabs .tab a {
+                color: rgba(25, 51, 77, 0.7);
+            }
+
+            .tabs .tab a:hover {
+                color: rgba(0, 11, 84, 1);
+            }
+
+            .tabs .tab a:focus.active {
+                color: #19334d;
+                background-color: rgba(0, 0, 255, 0.1);
+            }
+
+            .tabs .tab a.active {
+                color: #19334d;
+            }
+
+            .tabs .indicator {
+                background-color: #19334d;
+            }
+        </style>
+        <title>Tickets</title>
+    </head>
+    <body>
+        <header>
+            <nav class="nav-wraper">
+                <div class="container">
+                    <a href="/home" class="brand-logo"><img src="/logo/logo.png" height="80px" width="210px" alt="logo"></a>
+                    <a href="#" class="sidenav-trigger" data-target="mobile-links">
+                        <i class="material-icons">menu</i>
+                    </a>
+                    <ul class="right hide-on-med-and-down">
+                        <li style="margin-right: 20px;margin-top: 14px;">
+                            <input type="search" name="search" style="background-color: white; color: black; padding-left: 10px; width: 100%; margin-right: 5%" placeholder="Search">
+                        </li>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                        <% if(typeof person !== "undefined") { %>
+                            <li><a href="#"><%= person.fname %></a></li>
+                        <% } %>
+                        <li><a href="/">Sign Out</a></li>
+                    </ul>
+                </div>
+            </nav>
+
+            <ul class="sidenav" id="mobile-links">
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact</a></li>
+                <% if(typeof person !== "undefined") { %>
+                    <li><a href="#"><%= person.fname %></a></li>
+                <% } %>
+                <li><a href="/">Sign Out</a></li>
+            </ul>
+        </header>
+
+        <div id="content">
+            <div style="width:100%; height: 50%; margin: 0; background-color: #193341">
+                <div class="container">
+                    <div class="row">
+                        <div class="col s12 m12 l12">
+                            <div><h1 style="color: white"><%= movie.name %></h1></div>
+                            <div style="margin-top: 2%">
+                                <div class="badge langs" style="font-size: 12px;">
+                                    <% if(movie.adult === true){ %>
+                                        <h5 style="color: white">A</h5>
+                                    <% } %>
+                                    <% if(movie.adult !== true){ %>
+                                        <h5 style="color: white">UA</h5>
+                                    <% } %>
+                                </div>
+                                <div class="lang">
+                                    <h6 style="color: white"><i class="fa fa-calendar" aria-hidden="true"></i>&ensp;02Oct,2019&ensp;</h6>
+                                    <h6 style="color: white"><i class="fa fa-clock-o" aria-hidden="true"></i>&ensp;2hrs 36min</h6>
+                                </div>
+                                <div ><h5 style="color: white"><i class="material-icons red-text">favorite</i> <%= movie.rating %>%</h5></div>
+                                <div id="vote"><h6 style="color: white"><%= movie.votes %> votes</h6></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <% var seat_dict = ['A', 'B', 'C', 'D', 'E', 'F', 'G']%>
+            <div class="container" style="text-align: left;">
+                <div class="card">
+                    <div class="card-tabs">
+                        <ul class="tabs tabs-fixed-width">
+                            <li class="tab"><a class="active" href="#test4">Today</a></li>
+                            <li class="tab"><a  href="#test5">Tomorrow</a></li>
+                            <li class="tab"><a href="#test6">Day After Tomorrow</a></li>
+                        </ul>
+                    </div>
+                    <div class="card-content grey lighten-4">
+                        <div class="card" id="test4">
+                            <div class="card-tabs">
+                                <ul class="tabs tabs-fixed-width">
+                                    <li class="tab"><a class="active" href="#test7">11 : 00 am</a></li>
+                                    <li class="tab"><a  href="#test8">04 : 00 pm</a></li>
+                                    <li class="tab"><a href="#test9">08 : 00 pm</a></li>
+                                </ul>
+                            </div>
+                            <div class="card-content grey lighten-4">
+                                <div id="test7">
+                                    <div class="theatre">
+                                        <div class="cinema-seats left" >
+                                            <% for(var i = 0; i < 7; i++){ %>
+                                                <div class="cinema-row row-<%=i+1%>">
+                                                    <% for(var j = 0; j < 7; j++){ %>
+                                                        <div class="seat" id="<%=j+1%> <%=i+1%>"><%= seat_dict[j] %><%= i+1 %></div>
+                                                    <% }%>
+                                                </div>
+                                            <% } %>
+                                        </div>
+                                        <div class="cinema-seats right">
+                                            <% for(var i = 7; i < 14; i++){ %>
+                                            <div class="cinema-row row-<%=i + 1 - 7%>">
+                                                <% for(var j = 0; j < 7; j++){ %>
+                                                    <div class="seat" id="<%=j+1%> <%=i+1%>"><%= seat_dict[j] %><%= i+1 %></div>
+                                                <% }%>
+                                            </div>
+                                            <% } %>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="test8">
+                                    <div class="theatre">
+                                        <div class="cinema-seats left" >
+                                            <% for(var i = 0; i < 7; i++){ %>
+                                            <div class="cinema-row row-<%=i+1%>">
+                                                <% for(var j = 0; j < 7; j++){ %>
+                                                <div class="seat" id="<%=j+1%> <%=i+1%>"><%= seat_dict[j] %><%= i+1 %></div>
+                                                <% }%>
+                                            </div>
+                                            <% } %>
+                                        </div>
+                                        <div class="cinema-seats right">
+                                            <% for(var i = 7; i < 14; i++){ %>
+                                            <div class="cinema-row row-<%=i + 1 - 7%>">
+                                                <% for(var j = 0; j < 7; j++){ %>
+                                                <div class="seat" id="<%=j+1%> <%=i+1%>"><%= seat_dict[j] %><%= i+1 %></div>
+                                                <% }%>
+                                            </div>
+                                            <% } %>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="test9">
+                                    <div class="theatre">
+                                        <div class="cinema-seats left" >
+                                            <% for(var i = 0; i < 7; i++){ %>
+                                            <div class="cinema-row row-<%=i+1%>">
+                                                <% for(var j = 0; j < 7; j++){ %>
+                                                <div class="seat" id="<%=j+1%> <%=i+1%>"><%= seat_dict[j] %><%= i+1 %></div>
+                                                <% }%>
+                                            </div>
+                                            <% } %>
+                                        </div>
+                                        <div class="cinema-seats right">
+                                            <% for(var i = 7; i < 14; i++){ %>
+                                            <div class="cinema-row row-<%=i + 1 - 7%>">
+                                                <% for(var j = 0; j < 7; j++){ %>
+                                                <div class="seat" id="<%=j+1%> <%=i+1%>"><%= seat_dict[j] %><%= i+1 %></div>
+                                                <% }%>
+                                            </div>
+                                            <% } %>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card" id="test5">
+                            <div class="card-tabs">
+                                <ul class="tabs tabs-fixed-width">
+                                    <li class="tab"><a class="active" href="#test10">12 : 00 pm</a></li>
+                                    <li class="tab"><a  href="#test11">03 : 00 pm</a></li>
+                                    <li class="tab"><a href="#test12">06 : 00 pm</a></li>
+                                </ul>
+                            </div>
+                            <div class="card-content grey lighten-4">
+                                <div id="test10">
+                                    <div class="theatre">
+                                        <div class="cinema-seats left" >
+                                            <% for(var i = 0; i < 7; i++){ %>
+                                            <div class="cinema-row row-<%=i+1%>">
+                                                <% for(var j = 0; j < 7; j++){ %>
+                                                <div class="seat" id="<%=j+1%> <%=i+1%>"><%= seat_dict[j] %><%= i+1 %></div>
+                                                <% }%>
+                                            </div>
+                                            <% } %>
+                                        </div>
+                                        <div class="cinema-seats right">
+                                            <% for(var i = 7; i < 14; i++){ %>
+                                            <div class="cinema-row row-<%=i + 1 - 7%>">
+                                                <% for(var j = 0; j < 7; j++){ %>
+                                                <div class="seat" id="<%=j+1%> <%=i+1%>"><%= seat_dict[j] %><%= i+1 %></div>
+                                                <% }%>
+                                            </div>
+                                            <% } %>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="test11">
+                                    <div class="theatre">
+                                        <div class="cinema-seats left" >
+                                            <% for(var i = 0; i < 7; i++){ %>
+                                            <div class="cinema-row row-<%=i+1%>">
+                                                <% for(var j = 0; j < 7; j++){ %>
+                                                <div class="seat" id="<%=j+1%> <%=i+1%>"><%= seat_dict[j] %><%= i+1 %></div>
+                                                <% }%>
+                                            </div>
+                                            <% } %>
+                                        </div>
+                                        <div class="cinema-seats right">
+                                            <% for(var i = 7; i < 14; i++){ %>
+                                            <div class="cinema-row row-<%=i + 1 - 7%>">
+                                                <% for(var j = 0; j < 7; j++){ %>
+                                                <div class="seat" id="<%=j+1%> <%=i+1%>"><%= seat_dict[j] %><%= i+1 %></div>
+                                                <% }%>
+                                            </div>
+                                            <% } %>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="test12">
+                                    <div class="theatre">
+                                        <div class="cinema-seats left" >
+                                            <% for(var i = 0; i < 7; i++){ %>
+                                            <div class="cinema-row row-<%=i+1%>">
+                                                <% for(var j = 0; j < 7; j++){ %>
+                                                <div class="seat" id="<%=j+1%> <%=i+1%>"><%= seat_dict[j] %><%= i+1 %></div>
+                                                <% }%>
+                                            </div>
+                                            <% } %>
+                                        </div>
+                                        <div class="cinema-seats right">
+                                            <% for(var i = 7; i < 14; i++){ %>
+                                            <div class="cinema-row row-<%=i + 1 - 7%>">
+                                                <% for(var j = 0; j < 7; j++){ %>
+                                                <div class="seat" id="<%=j+1%> <%=i+1%>"><%= seat_dict[j] %><%= i+1 %></div>
+                                                <% }%>
+                                            </div>
+                                            <% } %>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card" id="test6">
+                            <div class="card-tabs">
+                                <ul class="tabs tabs-fixed-width">
+                                    <li class="tab"><a class="active" href="#test13">11 : 00 am</a></li>
+                                    <li class="tab"><a  href="#test14">02 : 00 pm</a></li>
+                                    <li class="tab"><a href="#test15">05 : 00 pm</a></li>
+                                </ul>
+                            </div>
+                            <div class="card-content grey lighten-4">
+                                <div id="test13">
+                                    <div class="theatre">
+                                        <div class="cinema-seats left" >
+                                            <% for(var i = 0; i < 7; i++){ %>
+                                            <div class="cinema-row row-<%=i+1%>">
+                                                <% for(var j = 0; j < 7; j++){ %>
+                                                <div class="seat" id="<%=j+1%> <%=i+1%>"><%= seat_dict[j] %><%= i+1 %></div>
+                                                <% }%>
+                                            </div>
+                                            <% } %>
+                                        </div>
+                                        <div class="cinema-seats right">
+                                            <% for(var i = 7; i < 14; i++){ %>
+                                            <div class="cinema-row row-<%=i + 1 - 7%>">
+                                                <% for(var j = 0; j < 7; j++){ %>
+                                                <div class="seat" id="<%=j+1%> <%=i+1%>"><%= seat_dict[j] %><%= i+1 %></div>
+                                                <% }%>
+                                            </div>
+                                            <% } %>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="test14">
+                                    <div class="theatre">
+                                        <div class="cinema-seats left" >
+                                            <% for(var i = 0; i < 7; i++){ %>
+                                            <div class="cinema-row row-<%=i+1%>">
+                                                <% for(var j = 0; j < 7; j++){ %>
+                                                <div class="seat" id="<%=j+1%> <%=i+1%>"><%= seat_dict[j] %><%= i+1 %></div>
+                                                <% }%>
+                                            </div>
+                                            <% } %>
+                                        </div>
+                                        <div class="cinema-seats right">
+                                            <% for(var i = 7; i < 14; i++){ %>
+                                            <div class="cinema-row row-<%=i + 1 - 7%>">
+                                                <% for(var j = 0; j < 7; j++){ %>
+                                                <div class="seat" id="<%=j+1%> <%=i+1%>"><%= seat_dict[j] %><%= i+1 %></div>
+                                                <% }%>
+                                            </div>
+                                            <% } %>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="test15">
+                                    <div class="theatre">
+                                        <div class="cinema-seats left" >
+                                            <% for(var i = 0; i < 7; i++){ %>
+                                            <div class="cinema-row row-<%=i+1%>">
+                                                <% for(var j = 0; j < 7; j++){ %>
+                                                <div class="seat" id="<%=j+1%> <%=i+1%>"><%= seat_dict[j] %><%= i+1 %></div>
+                                                <% }%>
+                                            </div>
+                                            <% } %>
+                                        </div>
+                                        <div class="cinema-seats right">
+                                            <% for(var i = 7; i < 14; i++){ %>
+                                            <div class="cinema-row row-<%=i + 1 - 7%>">
+                                                <% for(var j = 0; j < 7; j++){ %>
+                                                <div class="seat" id="<%=j+1%> <%=i+1%>"><%= seat_dict[j] %><%= i+1 %></div>
+                                                <% }%>
+                                            </div>
+                                            <% } %>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="width: 100%; text-align: center; background-color: #f3f3f3">
+                            <form action="/pmt" method="post" style="width: 100%; justify-content: center; background-color: #f3f3f3">
+                                <input id="pay" type="submit" value="Proceed to Payment" style="padding: 7px 45px; font-size: 18px; cursor:pointer; border-radius: 0;">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br><br>
+        </div>
+
+        <footer class="page-footer">
+            <div class="container">
+                <div class="valign-wraper row">
+                    <div class="col s12 m6 l6">
+                        <p>Tickets &copy; 2019. All rights reserved.</p>
+                        <p><a href="/tos">Terms of Service</a> | <a href="/privacy">Privacy</a></p>
+                    </div>
+                    <div class="col s12 m6 l6">
+                        <a href="/contact" class="right"><h5> Contact </h5></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <script src="../js/signup.js" type="text/javascript"></script>
+        <script src="../swiper/swiper.min.js"></script>
+        <script>
+            var swiper = new Swiper('.swiper-container', {
+                slidesPerView: 'auto',
+                spaceBetween: 30,
+                loop: true,
+                speed: 2000,
+                loopFillGroupWithBlank: true,
+                centeredSlides: true,
+                autoplay: {
+                    delay: 2500,
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+            });
+        </script>
+        <script>
+            $(document).ready(function(){
+                M.AutoInit();
+            });
+        </script>
+        <script type="text/javascript">
+            $('.cinema-seats .seat').on('click', function(){
+                $(this).toggleClass('active');
+            });
+        </script>
+    </body>
+</html>
