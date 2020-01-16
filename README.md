@@ -12,3 +12,7 @@ The front end is designed using Materialize CSS, Owl-Carousel, HTML, CSS and JS.
 ### Back End
 
 The back end has database, authentication, and admin authority. Admin of the website can interact with database and make changes in it.
+
+
+### Future Prospects
+
