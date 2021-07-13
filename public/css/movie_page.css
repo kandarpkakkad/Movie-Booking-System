@@ -1,0 +1,43 @@
+.badge {
+    border: 2px solid black;
+    border-radius: 50%; /* one half of ( (border * 2) + height + padding ) */
+    /*box-shadow: 1px 1px 1px black;*/
+    padding: 0.5% 1.5%;
+    text-align: center;
+    width: min-content;
+}
+
+.lang {
+    display: flex;
+}
+
+.langs {
+    margin: 0 3% 2% 0;
+    vertical-align: center;
+    padding: 0.5% 1.5%;
+}
+
+#vote {
+    color: #757575;
+}
+
+.headings {
+    color: #19334d;
+}
+
+#book {
+    float: right;
+    text-align: center;
+    border: 1px solid #19334d;
+    background-color: #19334d;
+    color: #f3f3f3;
+    font-size: 20px;
+    text-decoration: none;
+    padding: 7px 25px;
+}
+
+#book:hover {
+    background-color: #f3f3f3;
+    color: #19334d;
+    border: 1px solid #19334d;
+}

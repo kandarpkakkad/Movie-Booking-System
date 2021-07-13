@@ -1,0 +1,148 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f3f3f3;
+    position: relative;
+    min-height: 100vh;
+}
+
+header nav.nav-wraper {
+    background-color: #19334d;
+    height: 90px;
+    vertical-align: middle;
+}
+
+header nav.nav-wraper div.container ul.right.hide-on-med-and-down li {
+    height: 90px;
+    vertical-align: middle;
+    text-align: center;
+}
+
+header nav.nav-wraper div.container ul.right.hide-on-med-and-down li a {
+    padding-top: 14px;
+    height: 90px;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+header nav.nav-wraper div.container ul.right.hide-on-med-and-down li a:hover {
+    background-color: white;
+    color: #19334d;
+    height: 90px;
+}
+
+.brand-logo {
+    margin-top: 9px;
+    font-size: 24px;
+    text-transform: uppercase;
+    font-variant: small-caps;
+    letter-spacing: 3px;
+}
+
+.sidenav-trigger i{
+    padding-top: 14px;
+}
+
+header ul.sidenav#mobile-links {
+    background-color: #19334d;
+}
+
+header ul.sidenav#mobile-links li a {
+    background-color: #19334d;
+    color: white;
+}
+
+header ul.sidenav#mobile-links li a:hover {
+    background-color: white;
+    color: #19334d;
+}
+
+div.container.valign-wraper.white-text {
+    height: 885px;
+}
+
+div.container.valign-wraper.white-text a.btn-large.white.black-text.waves-effect.waves-light {
+    margin-left: 39%;
+    margin-top: 32.5%;
+    font-family: Ubuntu;
+    font-size: 20px;
+    border-radius: 5px;
+    min-width: 200px;
+
+}
+
+.material-icons.red-text {
+    vertical-align: middle;
+}
+
+.fa-heart {
+    height: 40px;
+    width: 40px;
+    color: red;
+}
+
+div.card.medium {
+    margin-top: 50px;
+}
+
+div.card.medium:hover {
+    transition: 0.3s;
+    box-shadow: 5px 5px 20px gray;
+    bottom: 5px;
+}
+
+.input-field input:focus + label {
+    color: darkgray !important;
+}
+
+.row .input-field input:focus {
+	border-bottom: 1px solid darkgray !important;
+	box-shadow: 0 1px 0 0 darkgray !important
+}
+
+footer.page-footer {
+    background-color: #19334d;
+    color: white;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+    margin-bottom: 0;
+}
+
+footer.page-footer a{
+    text-decoration: none;
+    color: white;
+}
+
+footer.page-footer a:hover {
+    text-decoration-line: underline;
+    text-decoration-color: white;
+}
+
+.swiper-container {
+    width: 100%;
+    height: 100%;
+}
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #f3f3f3;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    height: 30%;
+    width: 50%;
+    max-height: 500px;
+}
+
+#content {
+    min-height: 719px;
+}

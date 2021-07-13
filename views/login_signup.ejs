@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="shortcut icon" type="image/x-icon" href="/icons/movie_industry.ico"/>
+        <link rel="stylesheet" href="/css/tickets.css" type="text/css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"/>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+        <link href="https://fonts.googleapis.com/css?family=Inconsolata:700">
+        <link rel="stylesheet" type="text/css" href="/css/signup.css">
+        <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <title>Tickets</title>
+    </head>
+    <body>
+        <header>
+            <nav class="nav-wraper">
+                <div class="container">
+                    <a href="/" class="brand-logo"><img src="/logo/logo.png" height="80px" width="210px" alt="logo"></a>
+                    <a href="#" class="sidenav-trigger" data-target="mobile-links">
+                        <em class="material-icons">menu</em>
+                    </a>
+                    <ul class="right hide-on-med-and-down">
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+            </nav>
+
+            <ul class="sidenav" id="mobile-links">
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </header>
+
+        <div id="content" class="container">
+            <br>
+            <div class="container1" id="container1">
+                <div class="form-container sign-up-container">
+                    <form action="/signup" id="form_1" method="post">
+                        <h1>Create Account</h1>
+                        <div class="social-container">
+                            <a href="https://www.facebook.com/"><i class="fa fa-facebook-official fa-3x" aria-hidden="true"></i></a>
+                            <a href="https://www.google.com/gmail/"><i class="fa fa-google-plus-official fa-3x" aria-hidden="true"></i></a>
+                        </div>
+                        <span>or use your email for registration</span>
+                        <input type="text" placeholder="First name" id="fname" class="validate" name="fname" required="required">
+                        <input type="text" placeholder="Last name" id="lname" class="validate" name="lname" required="required">
+                        <input type="email" placeholder="Email" id="email" name="email" class="validate" required="required">
+                        <input type="text" placeholder="City" id="city" name="city" class="validate" required="required">
+                        <input placeholder="Date" name="bdate" class="textbox-n" type="text" onfocusin="(this.type='date')" onfocusout="(this.type='text')"  id="date">
+                        <input type="password" name="pwd" placeholder="Password" id="password" required="required" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
+                        <input type="password" name="rpwd" placeholder="Re-enter Password" id="repassword" required="required" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
+                        <br>
+                        Gender :
+                        <div id="radiogen">
+                            <label>
+                                <input name="gender" type="radio" class="with-gap" value="male" />
+                                <span>Male</span>
+                            </label>
+                            <label>
+                                <input name="gender" type="radio" class="with-gap" value="female" />
+                                <span>Female</span>
+                            </label>
+                            <label>
+                                <input name="gender" type="radio" class="with-gap" value="other" />
+                                <span>Other</span>
+                            </label>
+                        </div>
+                        <br>
+                        <div>
+                            <input id="su" type="submit" value="Sign Up">
+                        </div>
+                    </form>
+                </div>
+
+                <div class="form-container sign-in-container">
+                    <form action="/login" id="form_3" method="post">
+                        <h1>Sign in</h1>
+                        <div class="social-container">
+                            <a href="https://www.facebook.com/"><i class="fa fa-facebook-official fa-3x" aria-hidden="true"></i></a>
+                            <a href="https://www.google.com/gmail/"><i class="fa fa-google-plus-official fa-3x" aria-hidden="true"></i></a>
+                        </div>
+                        <span>or use your account</span>
+                        <input type="email" placeholder="Email" name="si_email" required="required"/>
+                        <input type="password" placeholder="Password" name="si_pwd" required="required"/>
+                        <p><a href="/forgotpassword" id="forgotpass">Forgot your password?</a></p>
+                        <div>
+                            <input id="si" type="submit" value="Sign In">
+                        </div>
+                    </form>
+                </div>
+                <div class="overlay-container">
+                    <div class="overlay">
+                        <div class="overlay-panel overlay-left">
+                            <h1>Welcome Back!</h1>
+                            <p>To keep connected with us please login with your personal info</p>
+                            <button class="ghost" id="signIn">Sign In</button>
+                        </div>
+                        <div class="overlay-panel overlay-right">
+                            <h1>Hello, Friend!</h1>
+                            <p>Enter your personal details and start journey with us</p>
+                            <button class="ghost" id="signUp">Sign Up</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br><br>
+        </div>
+
+        <footer class="page-footer">
+            <div class="container">
+                <div class="valign-wraper row">
+                    <div class="col s12 m6 l6">
+                        <p>Tickets &copy; 2019. All rights reserved.</p>
+                        <p><a href="/tos">Terms of Service</a> | <a href="/privacy">Privacy</a></p>
+                    </div>
+                    <div class="col s12 m6 l6">
+                        <a href="/contact" class="right"><h5> Contact </h5></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script src="/js/signup.js" type="text/javascript"></script>
+        <script>
+            $(document).ready(function(){
+                M.AutoInit();
+            });
+        </script>
+    </body>
+</html>
