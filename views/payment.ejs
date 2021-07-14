@@ -45,7 +45,7 @@
                 <div class="container">
                     <a href="/home" class="brand-logo"><img src="/logo/logo.png" height="80px" width="210px" alt="logo"></a>
                     <a href="#" class="sidenav-trigger" data-target="mobile-links">
-                        <i class="material-icons">menu</i>
+                        <em class="material-icons">menu</em>
                     </a>
                     <ul class="right hide-on-med-and-down">
                         <li style="margin-right: 20px;margin-top: 14px;">
@@ -54,7 +54,7 @@
                         <li><a href="/about">About</a></li>
                         <li><a href="/contact">Contact</a></li>
                         <% if(typeof person !== "undefined") { %>
-                            <li><a href="#"><%= person.fname %></a></li>
+                            <li><a href="#"><%= person.first_name %></a></li>
                         <% } %>
                         <li><a href="/">Sign Out</a></li>
                     </ul>
@@ -65,7 +65,7 @@
                 <li><a href="/about">About</a></li>
                 <li><a href="/contact">Contact</a></li>
                 <% if(typeof person !== "undefined") { %>
-                    <li><a href="#"><%= person.fname %></a></li>
+                    <li><a href="#"><%= person.first_name %></a></li>
                 <% } %>
                 <li><a href="/">Sign Out</a></li>
             </ul>
@@ -74,22 +74,54 @@
         <div id="content">
             <br><br>
             <div class="container">
+                <div style="justify-content: center; width: 100%;">
+                    <div id="hash">
+                        <span>Seat</span>
+                        <span>Cost</span>
+                    </div>
+                    <% for(var i = 0; i < seats.length; i++) { %>
+                        <div id="hash">
+                            <span><%= seats[i] %></span>
+                            <span>₹150</span>
+                        </div>
+                    <% } %>
+                    <div id="hash">
+                        <span></span>
+                        <span>Internet Charges</span>
+                    </div>
+                    <div id="hash">
+                        <span></span>
+                        <span><%= internet_charges %></span>
+                    </div>
+                    <div id="hash">
+                        <span></span>
+                        <span>Total Charges</span>
+                    </div>
+                    <div id="hash">
+                        <span></span>
+                        <span><%= total_cost %> + <%= internet_charges %></span>
+                    </div>
+                    <div id="hash">
+                        <span></span>
+                        <span><%= total_cost + internet_charges %></span>
+                    </div>
+                </div>
                 <form action="/success" style="justify-content: center; width: 100%;" method="POST">
                     <div class="row">
                         <div class="col s12 m12 l12">
                             <h4 style="text-align:center;">Payment via Credit Card</h4>
                             <label for="fname">Accepted Cards</label>
                             <div class="icon-container">
-                                <i class="fa fa-cc-visa" style="color:#1a1f71;"></i>
-                                <i class="fa fa-cc-amex" style="color:#016fd0;"></i>
-                                <i class="fa fa-cc-mastercard" style="color:#cc0000;"></i>
-                                <i class="fa fa-cc-discover" style="color:#E55C20;"></i>
+                                <em class="fa fa-cc-visa" style="color:#1a1f71;"></em>
+                                <em class="fa fa-cc-amex" style="color:#016fd0;"></em>
+                                <em class="fa fa-cc-mastercard" style="color:#cc0000;"></em>
+                                <em class="fa fa-cc-discover" style="color:#E55C20;"></em>
                             </div>
-                            <input type="text" id="cname" name="cardname" placeholder="Rajiv Bhatia" required="required">
+                            <input type="text" id="cname" name="cardname" placeholder="John Doe" required="required">
                             <label for="cname">Name on Card</label>
                             <br>
                             <input type="text" pattern="\d{16}" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444" required="required">
-                            <label for="ccnum">Credit card number</label>
+                            <label for="ccnum">Debit/Credit card number</label>
                             <br>
                         </div>
                         <div class="col s12 m12 l6">
@@ -102,7 +134,7 @@
                             <%today = yyyy+'-'+mm;%>
                             <% var ulimit = (yyyy + 10) + '-' + mm; %>
                             <input type="month" id="expmonth" name="expmonth" min="<%= today %>" max="<%= ulimit %>" required="required">
-                            <label for="exp">Exp Month & Year</label>
+                            <label for="exp">Expiration Month & Year</label>
                         </div>
                         <div class="col s12 m12 l6">
                             <input type="password" id="cvv" name="cvv" placeholder="***" pattern="[0-9]{3}" required="required">
@@ -118,7 +150,7 @@
             <div class="container">
                 <div class="valign-wraper row">
                     <div class="col s12 m6 l6">
-                        <p>Tickets &copy; 2019. All rights reserved.</p>
+                        <p>Tickets &copy; 2021. All rights reserved.</p>
                         <p><a href="/tos">Terms of Service</a> | <a href="/privacy">Privacy</a></p>
                     </div>
                     <div class="col s12 m6 l6">

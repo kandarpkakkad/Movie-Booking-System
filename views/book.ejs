@@ -64,18 +64,15 @@
         <header>
             <nav class="nav-wraper">
                 <div class="container">
-                    <a href="/home" class="brand-logo"><img src="/logo/logo.png" height="80px" width="210px" alt="logo"></a>
+                    <a href="/" class="brand-logo"><img src="/logo/logo.png" height="80px" width="210px" alt="logo"></a>
                     <a href="#" class="sidenav-trigger" data-target="mobile-links">
                         <i class="material-icons">menu</i>
                     </a>
                     <ul class="right hide-on-med-and-down">
-                        <li style="margin-right: 20px;margin-top: 14px;">
-                            <input type="search" name="search" style="background-color: white; color: black; padding-left: 10px; width: 100%; margin-right: 5%" placeholder="Search">
-                        </li>
                         <li><a href="/about">About</a></li>
                         <li><a href="/contact">Contact</a></li>
                         <% if(typeof person !== "undefined") { %>
-                            <li><a href="#"><%= person.fname %></a></li>
+                            <li><a href="#"><%= person.first_name %></a></li>
                         <% } %>
                         <li><a href="/">Sign Out</a></li>
                     </ul>
@@ -86,7 +83,7 @@
                 <li><a href="/about">About</a></li>
                 <li><a href="/contact">Contact</a></li>
                 <% if(typeof person !== "undefined") { %>
-                    <li><a href="#"><%= person.fname %></a></li>
+                    <li><a href="#"><%= person.first_name %></a></li>
                 <% } %>
                 <li><a href="/">Sign Out</a></li>
             </ul>
@@ -108,8 +105,8 @@
                                     <% } %>
                                 </div>
                                 <div class="lang">
-                                    <h6 style="color: white"><i class="fa fa-calendar" aria-hidden="true"></i>&ensp;02Oct,2019&ensp;</h6>
-                                    <h6 style="color: white"><i class="fa fa-clock-o" aria-hidden="true"></i>&ensp;2hrs 36min</h6>
+                                    <h6 style="color: white"><i class="fa fa-calendar" aria-hidden="true"></i>&ensp;<%= movie.release_date %>&ensp;</h6>
+                                    <h6 style="color: white"><i class="fa fa-clock-o" aria-hidden="true"></i>&ensp;<%= movie.duration %></h6>
                                 </div>
                                 <div ><h5 style="color: white"><i class="material-icons red-text">favorite</i> <%= movie.rating %>%</h5></div>
                                 <div id="vote"><h6 style="color: white"><%= movie.votes %> votes</h6></div>
@@ -362,8 +359,10 @@
                             </div>
                         </div>
                         <div style="width: 100%; text-align: center; background-color: #f3f3f3">
-                            <form action="/payment" method="post" style="width: 100%; justify-content: center; background-color: #f3f3f3">
-                                <input id="pay" type="submit" value="Proceed to Payment" style="padding: 7px 45px; font-size: 18px; cursor:pointer; border-radius: 0;">
+                            <form action="/<%= movie.name %>/payment" method="POST" style="width: 100%; text-align: center; background-color: #f3f3f3">
+                                <input id="seats_data" name="seats" type="text" value="" hidden="hidden"/>
+                                <button id="pay" type="submit" style="padding: 7px 45px; font-size: 18px; cursor:pointer; border-radius: 0;" onclick="return handleSubmit()">Proceed to Payment</button>
+                                <p id="not_selected"></p>
                             </form>
                         </div>
                     </div>
@@ -376,7 +375,7 @@
             <div class="container">
                 <div class="valign-wraper row">
                     <div class="col s12 m6 l6">
-                        <p>Tickets &copy; 2019. All rights reserved.</p>
+                        <p>Tickets &copy; 2021. All rights reserved.</p>
                         <p><a href="/tos">Terms of Service</a> | <a href="/privacy">Privacy</a></p>
                     </div>
                     <div class="col s12 m6 l6">
@@ -417,9 +416,31 @@
                 M.AutoInit();
             });
         </script>
-        <script type="text/javascript">
+        <script>
+            function handleSubmit() {
+                let movie_name = '<%-movie.name%>';
+                var seats = [];
+                for (var i = 1; i < 8; i++) {
+                    for (var j = 1; j < 14; j++) {
+                        if (document.getElementById(i.toString() + " " + j.toString()).classList.contains('active')) {
+                            seats.push(document.getElementById(i.toString() + " " + j.toString()).innerHTML);
+                        }
+                    }
+                }
+                if (seats.length !== 0) {
+                    document.getElementById("seats_data").value = seats;
+                    return true;
+                }
+                else {
+                    document.getElementById("not_selected").innerHTML = "Please select seats";
+                    return false;
+                }
+            }
+        </script>
+        <script>
             $('.cinema-seats .seat').on('click', function(){
                 $(this).toggleClass('active');
+                document.getElementById("not_selected").innerHTML = "";
             });
         </script>
     </body>

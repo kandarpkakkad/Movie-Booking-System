@@ -9,6 +9,8 @@ const User = require('./models/user');
 const homeRouter = require('./routes/home');
 const userRouter = require('./routes/user');
 const movieRouter = require('./routes/movie');
+const bookRouter = require('./routes/book');
+const paymentRouter = require('./routes/payment');
 const winston = require('winston')
 
 // Create app
@@ -53,13 +55,13 @@ function logRequest(req, res, next) {
     logger.info(req.url)
     next()
 }
-app.use(logRequest)
+app.use(logRequest);
 
-function logError(err, req, res, next) {
-    logger.error(err)
+function logError(req, res, next) {
+    logger.error(`Error occurred at URL: ${req.url}`);
     next()
 }
-app.use(logError)
+app.use(logError);
 
 // Middleware
 app.set("view engine", "ejs");
@@ -90,20 +92,16 @@ passport.deserializeUser((id, done) => {
 passport.use(new localStrategy({ usernameField: "si_email", passwordField: "si_pwd"},  (si_email, si_pwd, done) => {
     User.findOne({ email: si_email }, (err, user) => {
         if (err) {
-            console.log(`Error1: ${err}`);
             return done(err, { error: err });
         }
         if (!user) {
-            console.log("Invalid email.");
             return done(null, false, { error: "Invalid email." });
         }
         bcrypt.compare(si_pwd, user.password, (error, res) => {
             if (error) {
-                console.log(`Error2: ${error}`);
                 return done(error, { error: error});
             }
             if (res === false) {
-                console.log("Invalid password");
                 return done(null, false, { error: "Invalid password." });
             }
             return done(null, user);
@@ -115,6 +113,8 @@ passport.use(new localStrategy({ usernameField: "si_email", passwordField: "si_p
 app.use("/", userRouter);
 app.use("/", homeRouter);
 app.use("/", movieRouter);
+app.use("/", bookRouter);
+app.use('/', paymentRouter);
 
 // Run app
 app.listen(3000, () => {
