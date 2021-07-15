@@ -1,0 +1,74 @@
+Poster.create({
+    name: "Mumbai Saga",
+    img_path: "https://www.glamsham.com/wp-content/uploads/2021/03/John-Abraham-in-Sanjay-Gupta-s-Mumbai-Saga-Poster.jpg"
+});
+
+Poster.create({
+    name: "The Girl On The Train",
+    img_path: "https://images.indianexpress.com/2021/02/the-girl-on-the-train-ribhu-dasgupta-parineeti-chopra-1200.jpg"
+});
+
+Poster.create({
+    name: "Ajeeb Dastaans",
+    img_path: "https://images.thequint.com/thequint/2021-04/9a322fb0-55ae-4abd-9702-1eaf8fce8c40/Ajeeb_Dastaans_S2_Horizontal_sRGB_PRE20210401_4845_o66qnm.jpg?%20%20%20%20%20%20%20%20%20%20%20%20%20%20auto=format,compress&fmt=webp&format=webp&w=1200&h=900&dpr=1.0"
+});
+
+Movie.create({
+    name: "Terminator: Dark Fate",
+    back_path: "https://specials-images.forbesimg.com/imageserve/5daf89a2fc85aa0007a45c1c/960x0.jpg?",
+    img_path: "https://in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/terminator-et00090177-05-12-2018-02-35-26.jpg",
+    rating: 78,
+    duration: "2 hrs 08 mins",
+    release_date: "01 November, 2019",
+    languages: ["English"," Hindi", "Kannada"," Tamil"," Telugu"," Malayalam"],
+    genre: ["Action","Sci-fi","Thriller"],
+    votes: "30,991",
+    synopsis: ["Four shorts explore the surprising ways in which unexpected catalysts inflame the uncomfortable emotions simmering under fractured relationships."],
+    cast: [
+        {name: "Arnold Schwarzenegger",profession: "Actor",role: "As Terminator",img_path: "https://assets.londonist.com/uploads/2014/09/i333/arnold-schwarzenegger-official-pic-1.jpeg"},
+        {name: "Linda Hamilton",profession: "Actress",role: "As Sarah Connor",img_path: "http://7wallpapers.net/wp-content/uploads/4_Linda-Hamilton.jpg"},
+        {name: "Mackenzie Davis",profession: "Actress",role: "As Grace",img_path: "https://celebmafia.com/wp-content/uploads/2015/01/mackenzie-davis-halt-and-catch-fire-panel-tca-press-tour-in-pasadena_1.jpg"},
+        {name: "Diego Boneta",profession: "Actor",role: "As Maguel Ramos",img_path: "https://www.theplace2.ru/cache/archive/diego_boneta/img/1_(5)(58)-gthumb-gwdata1200-ghdata1200-gfitdatamax.jpg"},
+        {name: "Edward Forlong",profession: "Actor",role: "As John Connor",img_path: "https://i.pinimg.com/236x/35/16/d3/3516d3997bb08995a71d5da1f568eb30--edward-furlong-character-ideas.jpg"},
+        {name: "Steven Cree",profession: "Actor",role: "As Rigby",img_path: "https://m.media-amazon.com/images/M/MV5BMjI1MzI2NDM5NV5BMl5BanBnXkFtZTgwMDkwOTg2NTE@._V1_SY1000_CR0,0,666,1000_AL_.jpg"}
+    ],
+    crew: [
+        {name: "Tim Miller",role: ["Director"],img_path: "https://upload.wikimedia.org/wikipedia/commons/0/0c/Tim_Miller_by_Gage_Skidmore_2.jpg"},
+        {name: "James Cameron",role: ["Producer,Writer"],img_path: "https://media.vanityfair.com/photos/5a15cfcf1310ef0d93e09716/1:1/w_1462,h_1462,c_limit/james-cameron-embed.jpg"},
+        {name: "David Ellison",role: ["Producer"],img_path: "http://www1.pictures.zimbio.com/gi/David+Ellison+Premiere+Paramount+Pictures+Y9asnbVhNPIl.jpg"},
+        {name: "Junkie XL",role: ["Musician"],img_path: "http://images.fandango.com/ImageRenderer/0/0/redesign/static/img/default_poster.png/0/images/masterrepository/performer%20images/p241146/JunkieXL.jpg"}
+    ],
+    adult: false
+});
+
+Movie.create({
+    name: "Ajeeb Dastaans",
+    back_path: "https://images.thequint.com/thequint/2021-04/9a322fb0-55ae-4abd-9702-1eaf8fce8c40/Ajeeb_Dastaans_S2_Horizontal_sRGB_PRE20210401_4845_o66qnm.jpg?%20%20%20%20%20%20%20%20%20%20%20%20%20%20auto=format,compress&fmt=webp&format=webp&w=1200&h=900&dpr=1.0",
+    img_path: "https://bingeddata.s3.amazonaws.com/uploads/2021/04/Ajeeb-Daastaans-Netflix-Movie-Review-1.jpg",
+    rating: 83,
+    duration: "2 hrs 22 mins",
+    release_date: "16 April, 2021",
+    languages: ["Hindi"],
+    genre: ["Drama","Romance"],
+    votes: "30,991",
+    synopsis: ["Four shorts explore the surprising ways in which unexpected catalysts inflame the uncomfortable emotions simmering under fractured relationships."],
+    cast: [
+        {name: "Fatima Sana Shaikh",profession: "Actor",role: "As Lipakshi",img_path: "https://m.media-amazon.com/images/M/MV5BNzcwNjcxYTYtYWFjOS00YzNiLTk5MjgtMjQ0NGFlMDY3ODU3L2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyMTExNDQ2MTI@._V1_UY317_CR8,0,214,317_AL__QL50.jpg"},
+        {name: "Nushrat Bharucha",profession: "Actor",role: "As Meenal",img_path: "https://m.media-amazon.com/images/M/MV5BODYxNDhjZmQtZWUxZS00ZDE1LWJjNTItYzE1NzdhZGIyYjcxXkEyXkFqcGdeQXVyNDUzOTQ5MjY@._V1_UY317_CR51,0,214,317_AL__QL50.jpg"},
+        {name: "Konkona Sen Sharma",profession: "Actor",role: "As Bharti Mandal",img_path: "https://m.media-amazon.com/images/M/MV5BMTU1NjUxNDYwNV5BMl5BanBnXkFtZTgwOTU3MDM0OTE@._V1_UY317_CR3,0,214,317_AL__QL50.jpg"},
+        {name: "Shefali Shah",profession: "Actor",role: "As Natasha",img_path: "https://m.media-amazon.com/images/M/MV5BZjQ3NzVmYmEtYzVjYi00NjhkLTk2ZDAtMzM5NTE3NTYyMmU0XkEyXkFqcGdeQXVyMzY5NTI5NDA@._V1_UX214_CR0,0,214,317_AL__QL50.jpg"},
+        {name: "Aditi Rao Hydari",profession: "Actor",role: "As Priya Sharma",img_path: "https://m.media-amazon.com/images/M/MV5BZDFjZThlNTctYWRhZi00ZTMwLThiM2UtY2Q0YzM4NzlkY2NhXkEyXkFqcGdeQXVyMzYxOTQ3MDg@._V1_UX214_CR0,0,214,317_AL__QL50.jpg"},
+        {name: "Jaideep Ahlawat",profession: "Actor",role: "As Babloo",img_path: "https://m.media-amazon.com/images/M/MV5BZWM0NWUwYjQtNjQxMy00NWUwLTkzNzgtZWIxNjE2ZmE0MGFkXkEyXkFqcGdeQXVyOTAyMDgxODQ@._V1_UX214_CR0,0,214,317_AL__QL50.jpg"},
+        {name: "Abhishek Banerjee",profession: "Actor",role: "As Sushil",img_path: "https://m.media-amazon.com/images/M/MV5BZWMyNzgyYjYtNDBmMy00YTc1LTkzNzYtMDBkOThlZGYyNzE5XkEyXkFqcGdeQXVyNDAzNDk0MTQ@._V1_UY317_CR20,0,214,317_AL__QL50.jpg"},
+        {name: "Sara Arjun",profession: "Actor",role: "As Samaira",img_path: "https://m.media-amazon.com/images/M/MV5BY2JhMDk1YzQtMjc0Ny00ZmQ2LWJhZGItNWJmZjM3MDRlOWEyXkEyXkFqcGdeQXVyMjkxNzQ1NDI@._V1_UY317_CR0,0,214,317_AL__QL50.jpg"},
+    ],
+    crew: [
+        {name: "Neeraj Ghaywan",role: ["Director","Writer"],img_path: "https://m.media-amazon.com/images/M/MV5BMGZhOWM4ZGItZGMyMC00ZTUyLWIwYjYtNzdkMDRhOTk5MGZmXkEyXkFqcGdeQXVyMjQwMDg0Ng@@._V1_UY317_CR29,0,214,317_AL__QL50.jpg"},
+        {name: "Kayoze Irani",role: ["Director"],img_path: "https://m.media-amazon.com/images/S/sash/9FayPGLPcrscMjU.png"},
+        {name: "Shashank Khaitan",role: ["Director","Writer"],img_path: "https://m.media-amazon.com/images/M/MV5BMjMxMjMyNTk3N15BMl5BanBnXkFtZTgwODI0MzA3MTI@._V1_UY317_CR11,0,214,317_AL__QL50.jpg"},
+        {name: "Raj Mehta",role: ["Director"],img_path: "https://m.media-amazon.com/images/S/sash/9FayPGLPcrscMjU.png"},
+        {name: "Uzma Khan",role: ["Writer"],img_path: "https://m.media-amazon.com/images/S/sash/9FayPGLPcrscMjU.png"},
+        {name: "Sumit Saxena",role: ["Writer"],img_path: "https://m.media-amazon.com/images/S/sash/9FayPGLPcrscMjU.png"},
+    ],
+    adult: true
+});

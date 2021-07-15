@@ -11,6 +11,7 @@ const userRouter = require('./routes/user');
 const movieRouter = require('./routes/movie');
 const bookRouter = require('./routes/book');
 const paymentRouter = require('./routes/payment');
+const successRouter = require('./routes/paymentResult');
 const winston = require('winston')
 
 // Create app
@@ -115,6 +116,7 @@ app.use("/", homeRouter);
 app.use("/", movieRouter);
 app.use("/", bookRouter);
 app.use('/', paymentRouter);
+app.use('/', successRouter);
 
 // Run app
 app.listen(3000, () => {

@@ -168,16 +168,13 @@
                 <div class="container">
                     <a href="/home" class="brand-logo"><img src="/logo/logo.png" height="80px" width="210px" alt="logo"></a>
                     <a href="#" class="sidenav-trigger" data-target="mobile-links">
-                        <i class="material-icons">menu</i>
+                        <em class="material-icons">menu</em>
                     </a>
                     <ul class="right hide-on-med-and-down">
-                        <li style="margin-right: 20px;margin-top: 14px;">
-                            <input type="search" name="search" style="background-color: white; color: black; padding-left: 10px; width: 100%; margin-right: 55px" placeholder="Search">
-                        </li>
                         <li><a href="/about">About</a></li>
                         <li><a href="/contact">Contact</a></li>
                         <% if(typeof person !== "undefined") { %>
-                            <li><a href="#"><%= person.fname %></a></li>
+                            <li><a href="#"><%= person.first_name %></a></li>
                         <% } %>
                         <li><a href="/">Sign Out</a></li>
                     </ul>
@@ -188,7 +185,7 @@
                 <li><a href="/about">About</a></li>
                 <li><a href="/contact">Contact</a></li>
                 <% if(typeof person !== "undefined") { %>
-                    <li><a href="#"><%= person.fname %></a></li>
+                    <li><a href="#"><%= person.first_name %></a></li>
                 <% } %>
                 <li><a href="/">Sign Out</a></li>
             </ul>
